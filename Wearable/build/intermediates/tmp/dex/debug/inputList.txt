@@ -1,0 +1,10 @@
+C:\Users\aladin\AndroidStudioProjects\ADWatchFaceAnalog\Wearable\build\intermediates\classes\debug
+C:\Users\aladin\AndroidStudioProjects\ADWatchFaceAnalog\Wearable\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-298b8e9939409a73207ffd9e1df758a2d3ade0f3.jar
+C:\Users\aladin\AndroidStudioProjects\ADWatchFaceAnalog\Wearable\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-f3050fccee9713dd1a6825e0942333ed244f7048.jar
+C:\Users\aladin\AndroidStudioProjects\ADWatchFaceAnalog\Wearable\build\intermediates\pre-dexed\debug\classes-2d317e17383cbc19f70f89ebc5a622a3ae528c98.jar
+C:\Users\aladin\AndroidStudioProjects\ADWatchFaceAnalog\Wearable\build\intermediates\pre-dexed\debug\classes-e71dca0370f3e4807499c0ebcd694c436193f386.jar
+C:\Users\aladin\AndroidStudioProjects\ADWatchFaceAnalog\Wearable\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-ea8d25be9d182df6cde4094927f38b2f386e1858.jar
+C:\Users\aladin\AndroidStudioProjects\ADWatchFaceAnalog\Wearable\build\intermediates\pre-dexed\debug\classes-4ce1e4c4d5080a4da6ace22c2d4ec36d8bdcc134.jar
+C:\Users\aladin\AndroidStudioProjects\ADWatchFaceAnalog\Wearable\build\intermediates\pre-dexed\debug\classes-3dab9d302d3904871b5b731f79f4ed9006a12b0f.jar
+C:\Users\aladin\AndroidStudioProjects\ADWatchFaceAnalog\Wearable\build\intermediates\pre-dexed\debug\classes-b9d4bf933f85a385392861332d46e9a61a446f34.jar
+C:\Users\aladin\AndroidStudioProjects\ADWatchFaceAnalog\Wearable\build\intermediates\pre-dexed\debug\classes-75a09c6727bc7c1ac4bdb0e3bbcba6b1258400f6.jar

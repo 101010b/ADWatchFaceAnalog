@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.wearable.view.BoxInsetLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/black"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:padding="0dp">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_box="all">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Set Time"
+            android:id="@+id/textView2"
+            android:layout_gravity="center_horizontal|top"
+            android:textColor="#ffffff" />
+
+        <TimePicker
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/timePicker"
+            android:layout_gravity="center"
+            android:timePickerMode="spinner"
+            style="@style/Theme.Wearable" />
+
+
+    </FrameLayout>
+</android.support.wearable.view.BoxInsetLayout>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.wearable.view.BoxInsetLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/black"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:padding="20dp">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="0dp"
+        app:layout_box="all">
+
+        <TextView
+            android:layout_gravity="center_horizontal|top"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Count Down"
+            android:textColor="@color/white"
+            style="@style/TextView.Large" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_gravity="bottom|left"
+            android:layout_height="50dp"
+            android:layout_width="80dp"
+            android:text="Start"
+            android:id="@+id/BtnStartCountdown" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_gravity="bottom|right"
+            android:layout_height="50dp"
+            android:layout_width="80dp"
+            android:text="Stop"
+            android:id="@+id/BtnStopCountdown" />
+
+        <ToggleButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Show Hand"
+            android:id="@+id/showCountdownHand"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hand"
+            android:id="@+id/textView3"
+            android:layout_gravity="left|center_vertical" />
+
+
+
+    </FrameLayout>
+</android.support.wearable.view.BoxInsetLayout>

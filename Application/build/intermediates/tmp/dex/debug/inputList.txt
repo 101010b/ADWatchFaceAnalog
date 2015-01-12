@@ -1,0 +1,10 @@
+C:\Users\aladin\AndroidStudioProjects\WatchFace\Application\build\intermediates\classes\debug
+C:\Users\aladin\AndroidStudioProjects\WatchFace\Application\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-2502e0cf9ff233f510d7bf95c96c8aac72e3b397.jar
+C:\Users\aladin\AndroidStudioProjects\WatchFace\Application\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-f3050fccee9713dd1a6825e0942333ed244f7048.jar
+C:\Users\aladin\AndroidStudioProjects\WatchFace\Application\build\intermediates\pre-dexed\debug\classes-4df315209d2cf2f1dd86c836ca53342a7520995d.jar
+C:\Users\aladin\AndroidStudioProjects\WatchFace\Application\build\intermediates\pre-dexed\debug\classes-505a2cb8c8d927607d913d7e9ac1f88927bd37c0.jar
+C:\Users\aladin\AndroidStudioProjects\WatchFace\Application\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-5d1df940eee45b61e0524c9e321d8bdd647f2143.jar
+C:\Users\aladin\AndroidStudioProjects\WatchFace\Application\build\intermediates\pre-dexed\debug\classes-ff1b64266e93157a1bd81d70680a22878cbbec1f.jar
+C:\Users\aladin\AndroidStudioProjects\WatchFace\Application\build\intermediates\pre-dexed\debug\classes-dd30b9cb87aeb50883bfa810afc2dadc573926c5.jar
+C:\Users\aladin\AndroidStudioProjects\WatchFace\Application\build\intermediates\pre-dexed\debug\classes-39e1d11b66eca8af56ffd35f44af133278ded6fd.jar
+C:\Users\aladin\AndroidStudioProjects\WatchFace\Application\build\intermediates\pre-dexed\debug\classes-66daf2a74218024464e29ade530fb5e38d466739.jar
