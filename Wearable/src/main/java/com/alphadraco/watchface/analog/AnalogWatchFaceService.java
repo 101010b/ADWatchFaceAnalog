@@ -29,6 +29,7 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.PixelFormat;
 import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
@@ -51,7 +52,10 @@ import android.support.wearable.watchface.WatchFaceStyle;
 import android.text.format.Time;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.MotionEvent;
 import android.view.SurfaceHolder;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -67,6 +71,7 @@ import com.google.android.gms.wearable.MessageEvent;
 import com.google.android.gms.wearable.Wearable;
 
 import java.util.Calendar;
+import java.util.Random;
 import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
 
@@ -95,7 +100,14 @@ public class AnalogWatchFaceService extends CanvasWatchFaceService {
     {
         static final int MSG_UPDATE_TIME = 0;
 
-
+        /*
+        @Override
+        public Bundle onCommand(String action, int x, int y, int z, Bundle extras, boolean resultRequested) {
+            Log.d(TAG,action);
+            return super.onCommand(action,x,y,z,extras,resultRequested);
+        }
+        */
+        
         // Hands
         Paint   mMinutePaint, mMinutePaint_ambient,
                 mMinuteIndicatorPaint, mMinuteIndicatorPaint_ambient;
@@ -132,6 +144,8 @@ public class AnalogWatchFaceService extends CanvasWatchFaceService {
         boolean cntDiffdefined=false;
         long cntDiffold=0;
 
+        private boolean oldambient=false;
+        
         /*
         @Override
         public final void onAccuracyChanged(Sensor sensor, int accuracy) {
@@ -191,13 +205,54 @@ public class AnalogWatchFaceService extends CanvasWatchFaceService {
         boolean batterycharging=false;
         float batteryfill=0.0f;
         //float temperature=0.0f;
-
+        
+        /*
+        public class TouchGrabber extends ViewGroup {
+            public TouchGrabber(Context context) {
+                super(context);                
+            }
+            
+            @Override
+            protected void onDraw(Canvas cv) {
+                super.onDraw(cv);                
+            }
+            
+            @Override
+            protected void onLayout(boolean arg0, int arg1, int arg2, int arg3, int arg4) {
+            }
+            
+            @Override
+            public boolean onTouchEvent(MotionEvent event) {
+                //return super.onTouchEvent(event);
+                Log.d(TAG,"Touched");
+                //Toast.makeText(getContext(),"onTouchEvent", Toast.LENGTH_LONG).show();
+                return true;
+            }
+        }
+        */
+        
         @Override
         public void onCreate(SurfaceHolder holder) {
             if (Log.isLoggable(TAG, Log.DEBUG)) {
                 Log.d(TAG, "onCreate");
             }
             super.onCreate(holder);
+
+            /*
+            WindowManager wm = (WindowManager)AnalogWatchFaceService.this.getSystemService(WINDOW_SERVICE);
+            WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams(
+                    WindowManager.LayoutParams.WRAP_CONTENT,
+                    WindowManager.LayoutParams.TYPE_SYSTEM_OVERLAY,
+                    0,
+                    WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE | 
+                            WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
+                    PixelFormat.TRANSLUCENT);
+            layoutParams.gravity = Gravity.RIGHT | Gravity.TOP;
+            layoutParams.setTitle("Test");
+            TouchGrabber touchGrabber = new TouchGrabber(AnalogWatchFaceService.this);
+            wm.addView(touchGrabber,layoutParams);
+            */
+
 
             AnalogWatchFaceService.this.registerReceiver(new BroadcastReceiver() {
                 @Override
@@ -525,8 +580,14 @@ public class AnalogWatchFaceService extends CanvasWatchFaceService {
 
         Bitmap Bitmap_ambient, Bitmap_normal;
 
-        public void drawBackground(Canvas drawCanvas, Rect bounds, boolean ambient) {
+        public void drawBackground(Canvas drawCanvas, Rect bounds, boolean ambient, boolean renew) {
             // Check for cached version
+            if (renew) {
+                if (ambient) 
+                    Bitmap_ambient=null;
+                else
+                    Bitmap_normal=null;
+            }
             if (ambient) {
                 if (Bitmap_ambient != null) {
                     drawCanvas.drawBitmap(Bitmap_ambient, 0, 0, null);
@@ -573,6 +634,116 @@ public class AnalogWatchFaceService extends CanvasWatchFaceService {
             if (ambient)
                 clockrad -= 6f;
 
+            if (!ambient) {
+                Random r = new Random();
+                projector prj = new projector(
+                        new vector(100f,120f,80f),
+                        new vector(0f,0f,0f),
+                        new vector(0f,1f,0f),
+                        200f,200f,200f,320f,320f);
+                Paint fp = new Paint();
+                fp.setAntiAlias(true);
+                fp.setStrokeWidth(2f);
+                fp.setARGB(255,64,64,64);
+                vectorbox vb=new vectorbox(100,50,50);
+                vb.plot(canvas,fp,prj);
+                
+                for (int i=0;i<16;i++) {
+                    Paint dp = new Paint();
+                    float colr, colg, colb;
+                    dp.setAntiAlias(true);
+                    dp.setStrokeWidth(2f);
+                    colr=(float)r.nextInt(64)+64f;
+                    colg=(float)r.nextInt(64)+64f;
+                    colb=(float)r.nextInt(64)+64f;
+                    vector p=new vector(0,0,0);
+                    vector v=new vector((float)r.nextInt(201)-100f,(float)r.nextInt(201)-100f,(float)r.nextInt(201)-100f);
+                    v.mult(0.1f);
+                    float m=(float)r.nextInt(100);
+                    float chrg=(float)r.nextInt(3)-1.0f;
+                    vector B=new vector(1,0,0);
+                    float l=0;
+                    int nmax=200;
+                    int n=0;
+                    while ((l < 300) && (n < nmax)) {
+                        if (m > 0) {
+                            vector frc = vector.cross(B, v);
+                            frc.mult(1 / m);
+                            frc.mult(chrg);
+                            v.add(frc);
+                        }
+                        v.mult(0.99f);
+                        vector vs = vector.mult(v, 0.1f);
+                        vector pnext=vector.add(p,vs);
+                        colr*=0.995;
+                        colg*=0.995;
+                        colb*=0.995;
+                        if (prj.project(p)) {
+                            float sx,sy;
+                            sx=prj.outx;sy=prj.outy;
+                            if (prj.project(pnext)) {
+                                float ex,ey;
+                                dp.setARGB(127,(int)colr,(int)colg,(int)colb);
+                                ex=prj.outx;ey=prj.outy;
+                                canvas.drawLine(sx,sy,ex,ey,dp);
+                            }
+                        }
+                        
+                        p=pnext;
+                        l=p.len();
+                        n++;
+                    }
+
+                }
+                
+                
+                /*
+                Paint dg = new Paint();
+                Paint dr = new Paint();
+                Paint db = new Paint();
+                dg.setARGB(255,0,63,0);
+                dg.setAntiAlias(true);
+                dr.setARGB(255,63,0,0);
+                dr.setAntiAlias(true);
+                db.setARGB(255,0,0,63);
+                db.setAntiAlias(true);
+
+                for (int i=0;i<120;i++) {
+                    float tickRot;
+                    tickRot = (float) (i * Math.PI * 2 / 120);
+                    float outerX = (float) Math.sin(tickRot) * clockrad;
+                    float outerY = (float) -Math.cos(tickRot) * clockrad;
+                    tickRot = 4.5f * (float)(i * Math.PI * 2 / 120) - (float)Math.PI;
+                    float innerX = (float) Math.sin(tickRot) * clockrad;
+                    float innerY = (float) -Math.cos(tickRot) * clockrad;
+                    canvas.drawLine(centerX + innerX, centerY + innerY,
+                            centerX + outerX, centerY + outerY, db);
+                }
+                for (int i=0;i<120;i++) {
+                    float tickRot;
+                    tickRot = (float) (i * Math.PI * 2 / 120);
+                    float outerX = (float) Math.sin(tickRot) * clockrad;
+                    float outerY = (float) -Math.cos(tickRot) * clockrad;
+                    tickRot = 1.5f * (float)(i * Math.PI * 2 / 120) + (float)Math.PI;
+                    float innerX = (float) Math.sin(tickRot) * clockrad;
+                    float innerY = (float) -Math.cos(tickRot) * clockrad;
+                    canvas.drawLine(centerX + innerX, centerY + innerY,
+                            centerX + outerX, centerY + outerY, dr);
+                }
+                for (int i=0;i<120;i++) {
+                    float tickRot;
+                    tickRot = (float) (i * Math.PI * 2 / 120);
+                    float outerX = (float) Math.sin(tickRot) * clockrad;
+                    float outerY = (float) -Math.cos(tickRot) * clockrad;
+                    tickRot = 3.5f * (float)(i * Math.PI * 2 / 120) + (float)Math.PI;
+                    float innerX = (float) Math.sin(tickRot) * clockrad;
+                    float innerY = (float) -Math.cos(tickRot) * clockrad;
+                    canvas.drawLine(centerX + innerX, centerY + innerY,
+                            centerX + outerX, centerY + outerY, dg);
+                }
+                */
+            }
+            
             for (int tickIndex = 0; tickIndex < 60; tickIndex++) {
                 float tickRot;
                 tickRot = (float) (tickIndex * Math.PI * 2 / 60);
@@ -596,12 +767,6 @@ public class AnalogWatchFaceService extends CanvasWatchFaceService {
                         innerX = (float) Math.sin(tickRot) * (clockrad-15f);
                         innerY = (float) -Math.cos(tickRot) * (clockrad-15f);
                     }
-                    Path poly = new Path();
-                    poly.moveTo(centerX + innerX-ofsx, centerY + innerY-ofsy);
-                    poly.lineTo(centerX + outerX-ofsx, centerY + outerY-ofsy);
-                    poly.lineTo(centerX + outerX+ofsx, centerY + outerY+ofsy);
-                    poly.lineTo(centerX + innerX+ofsx, centerY + innerY+ofsy);
-                    poly.close();
 
                     Paint pnt;
                     if (tickIndex == 0) {
@@ -615,11 +780,24 @@ public class AnalogWatchFaceService extends CanvasWatchFaceService {
                         else
                             pnt = mHourTickPaint;
                     }
-                    canvas.drawPath(poly,pnt);
-                    //canvas.drawLine(centerX + innerX-ofsx, centerY + innerY-ofsy,
-                    //        centerX + outerX-ofsx, centerY + outerY-ofsy, pnt);
-                    //canvas.drawLine(centerX + innerX+ofsx, centerY + innerY+ofsy,
-                    //        centerX + outerX+ofsx, centerY + outerY+ofsy, pnt);
+                    
+                            
+                            
+                    if (ambient) {
+                        canvas.drawLine(centerX + innerX - ofsx, centerY + innerY - ofsy,
+                                centerX + outerX - ofsx, centerY + outerY - ofsy, pnt);
+                        canvas.drawLine(centerX + innerX + ofsx, centerY + innerY + ofsy,
+                                centerX + outerX + ofsx, centerY + outerY + ofsy, pnt);
+                    } else {
+                        Path poly = new Path();
+                        poly.moveTo(centerX + innerX - ofsx, centerY + innerY - ofsy);
+                        poly.lineTo(centerX + outerX - ofsx, centerY + outerY - ofsy);
+                        poly.lineTo(centerX + outerX + ofsx, centerY + outerY + ofsy);
+                        poly.lineTo(centerX + innerX + ofsx, centerY + innerY + ofsy);
+                        poly.close();
+                        canvas.drawPath(poly,pnt);
+                    }
+
                 } else {
                     // Minutes
                     if (!ambient) {
@@ -660,6 +838,8 @@ public class AnalogWatchFaceService extends CanvasWatchFaceService {
                 canvas.drawLine(cx+minX,cy+minY,cx+maxX,cy+maxY,rad2_paint);
         }
 
+
+        
         @Override
         public void onDraw(Canvas canvas, Rect bounds) {
             mTime.setToNow();
@@ -670,10 +850,19 @@ public class AnalogWatchFaceService extends CanvasWatchFaceService {
 
             int width = bounds.width();
             int height = bounds.height();
+            
+            boolean renew = false;
+            
+            if ((!ambient) && (oldambient)) {
+                renew = true;
+            }
+            oldambient=ambient;
+
+            //canvas.drawARGB(255,0,0,0); // Clear
 
             // Draw the background (Ticks, frame... whatever)
             // This function also caches the resulting image so that updates run much faster
-            drawBackground(canvas,bounds,ambient);
+            drawBackground(canvas,bounds,ambient,renew);
 
             // Find the center. Ignore the window insets so that, on round watches with a
             // "chin", the watch face is centered on the entire screen, not just the usable
@@ -684,13 +873,13 @@ public class AnalogWatchFaceService extends CanvasWatchFaceService {
 
             // Text Displays
             // Date and Work Week
-            if (!ambient) {
+            //if (!ambient) {
                 s = mTime.format("%a, %d.%m.%Y, KW %V");
                 if (ambient)
                     canvas.drawText(s, centerX, centerY + 30f, mNormalTextPaint_ambient);
                 else
                     canvas.drawText(s, centerX, centerY + 30f, mNormalTextPaint);
-            }
+            //}
 
             // Primary Timezone
             if (!ambient)
@@ -887,6 +1076,7 @@ public class AnalogWatchFaceService extends CanvasWatchFaceService {
             canvas.drawCircle(centerX, centerY,4f,pnt);
 
         }
+        
 
         @Override
         public void onVisibilityChanged(boolean visible) {

@@ -2,6 +2,34 @@
 <items version="2" >
 
     <item
+        jar="C:\Users\aladin\AndroidStudioProjects\ADWatchFaceAnalog\Wearable\build\intermediates\exploded-aar\com.android.support\support-v13\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="2c2071dcaf7a008c3b01a6381a33be55396bab09">
+        <dex dex="C:\Users\aladin\AndroidStudioProjects\ADWatchFaceAnalog\Wearable\build\intermediates\pre-dexed\debug\classes-2d317e17383cbc19f70f89ebc5a622a3ae528c98.jar" />
+    </item>
+    <item
+        jar="C:\Users\aladin\AndroidStudioProjects\ADWatchFaceAnalog\Wearable\build\intermediates\exploded-aar\com.google.android.gms\play-services-wearable\6.5.87\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="6384c6cd674a22610b932d9464aa6938d067f285">
+        <dex dex="C:\Users\aladin\AndroidStudioProjects\ADWatchFaceAnalog\Wearable\build\intermediates\pre-dexed\debug\classes-e71dca0370f3e4807499c0ebcd694c436193f386.jar" />
+    </item>
+    <item
+        jar="C:\Users\aladin\AndroidStudioProjects\ADWatchFaceAnalog\Application\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\21.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="efeda77c808750cb670ee9c48d8a1835d89dbcb2">
+        <dex dex="C:\Users\aladin\AndroidStudioProjects\ADWatchFaceAnalog\Application\build\intermediates\pre-dexed\debug\classes-389022770590dd97addfb504f75038c76c64d141.jar" />
+    </item>
+    <item
+        jar="C:\Users\aladin\AndroidStudioProjects\ADWatchFaceAnalog\Application\build\intermediates\exploded-aar\com.google.android.support\wearable\1.1.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="27f19641b81b1078e653d2f0e5d1ed44d158a785">
+        <dex dex="C:\Users\aladin\AndroidStudioProjects\ADWatchFaceAnalog\Application\build\intermediates\pre-dexed\debug\classes-752a4fd56952b34e4e899ecb49ce2e54c9d4a232.jar" />
+    </item>
+    <item
         jar="C:\Users\aladin\AndroidStudioProjects\ADWatchFaceAnalog\Wearable\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\6.5.87\classes.jar"
         jumboMode="false"
         revision="21.1.1"
@@ -9,11 +37,53 @@
         <dex dex="C:\Users\aladin\AndroidStudioProjects\ADWatchFaceAnalog\Wearable\build\intermediates\pre-dexed\debug\classes-75a09c6727bc7c1ac4bdb0e3bbcba6b1258400f6.jar" />
     </item>
     <item
+        jar="C:\Users\aladin\AndroidStudioProjects\ADWatchFaceAnalog\Application\build\intermediates\exploded-aar\com.android.support\support-v13\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="2c2071dcaf7a008c3b01a6381a33be55396bab09">
+        <dex dex="C:\Users\aladin\AndroidStudioProjects\ADWatchFaceAnalog\Application\build\intermediates\pre-dexed\debug\classes-35244ec40caee3f3e1de31afc751c96911f9052f.jar" />
+    </item>
+    <item
+        jar="C:\Users\aladin\AndroidStudioProjects\ADWatchFaceAnalog\Application\build\intermediates\exploded-aar\com.google.android.gms\play-services-wearable\6.5.87\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="6384c6cd674a22610b932d9464aa6938d067f285">
+        <dex dex="C:\Users\aladin\AndroidStudioProjects\ADWatchFaceAnalog\Application\build\intermediates\pre-dexed\debug\classes-0c729fb96a52dd88dc57d3fbc8ba7e3736e1cd9b.jar" />
+    </item>
+    <item
+        jar="C:\android-studio-sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="C:\Users\aladin\AndroidStudioProjects\ADWatchFaceAnalog\Wearable\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-f3050fccee9713dd1a6825e0942333ed244f7048.jar" />
+    </item>
+    <item
+        jar="C:\Users\aladin\AndroidStudioProjects\ADWatchFaceAnalog\Wearable\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\21.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="efeda77c808750cb670ee9c48d8a1835d89dbcb2">
+        <dex dex="C:\Users\aladin\AndroidStudioProjects\ADWatchFaceAnalog\Wearable\build\intermediates\pre-dexed\debug\classes-3dab9d302d3904871b5b731f79f4ed9006a12b0f.jar" />
+    </item>
+    <item
         jar="C:\Users\aladin\AndroidStudioProjects\ADWatchFaceAnalog\Wearable\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\libs\internal_impl-21.0.3.jar"
         jumboMode="false"
         revision="21.1.1"
         sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
         <dex dex="C:\Users\aladin\AndroidStudioProjects\ADWatchFaceAnalog\Wearable\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-ea8d25be9d182df6cde4094927f38b2f386e1858.jar" />
+    </item>
+    <item
+        jar="C:\Users\aladin\AndroidStudioProjects\ADWatchFaceAnalog\Application\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\libs\internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="C:\Users\aladin\AndroidStudioProjects\ADWatchFaceAnalog\Application\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-a024a873ea8e6b42a783044424b21c6a76cb845a.jar" />
+    </item>
+    <item
+        jar="C:\Users\aladin\AndroidStudioProjects\ADWatchFaceAnalog\Application\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="C:\Users\aladin\AndroidStudioProjects\ADWatchFaceAnalog\Application\build\intermediates\pre-dexed\debug\classes-1156f572413e07557762be68ce2b1a4f9efe0364.jar" />
     </item>
     <item
         jar="C:\Users\aladin\AndroidStudioProjects\ADWatchFaceAnalog\Wearable\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\classes.jar"
@@ -30,39 +100,25 @@
         <dex dex="C:\Users\aladin\AndroidStudioProjects\ADWatchFaceAnalog\Wearable\build\intermediates\pre-dexed\debug\classes-4ce1e4c4d5080a4da6ace22c2d4ec36d8bdcc134.jar" />
     </item>
     <item
+        jar="C:\Users\aladin\AndroidStudioProjects\ADWatchFaceAnalog\Application\build\intermediates\exploded-aar\com.android.support\support-v13\21.0.3\libs\internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="0dcc55e70f7ebf7238fe2ec53f662eb378ab2668">
+        <dex dex="C:\Users\aladin\AndroidStudioProjects\ADWatchFaceAnalog\Application\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-c524cb9ddb56f37d6038899e2d72a80e97bf2746.jar" />
+    </item>
+    <item
+        jar="C:\Users\aladin\AndroidStudioProjects\ADWatchFaceAnalog\Application\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\6.5.87\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="95482e7c792a7c0d5a9d5461e97726bd54fe9549">
+        <dex dex="C:\Users\aladin\AndroidStudioProjects\ADWatchFaceAnalog\Application\build\intermediates\pre-dexed\debug\classes-625ec19fd9d8e6423a3993b20e3533a015b4aebe.jar" />
+    </item>
+    <item
         jar="C:\Users\aladin\AndroidStudioProjects\ADWatchFaceAnalog\Wearable\build\intermediates\exploded-aar\com.android.support\support-v13\21.0.3\libs\internal_impl-21.0.3.jar"
         jumboMode="false"
         revision="21.1.1"
         sha1="0dcc55e70f7ebf7238fe2ec53f662eb378ab2668">
         <dex dex="C:\Users\aladin\AndroidStudioProjects\ADWatchFaceAnalog\Wearable\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-298b8e9939409a73207ffd9e1df758a2d3ade0f3.jar" />
-    </item>
-    <item
-        jar="C:\Users\aladin\AndroidStudioProjects\ADWatchFaceAnalog\Wearable\build\intermediates\exploded-aar\com.android.support\support-v13\21.0.3\classes.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="2c2071dcaf7a008c3b01a6381a33be55396bab09">
-        <dex dex="C:\Users\aladin\AndroidStudioProjects\ADWatchFaceAnalog\Wearable\build\intermediates\pre-dexed\debug\classes-2d317e17383cbc19f70f89ebc5a622a3ae528c98.jar" />
-    </item>
-    <item
-        jar="C:\Users\aladin\AndroidStudioProjects\ADWatchFaceAnalog\Wearable\build\intermediates\exploded-aar\com.google.android.gms\play-services-wearable\6.5.87\classes.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="6384c6cd674a22610b932d9464aa6938d067f285">
-        <dex dex="C:\Users\aladin\AndroidStudioProjects\ADWatchFaceAnalog\Wearable\build\intermediates\pre-dexed\debug\classes-e71dca0370f3e4807499c0ebcd694c436193f386.jar" />
-    </item>
-    <item
-        jar="C:\android-studio-sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
-        <dex dex="C:\Users\aladin\AndroidStudioProjects\ADWatchFaceAnalog\Wearable\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-f3050fccee9713dd1a6825e0942333ed244f7048.jar" />
-    </item>
-    <item
-        jar="C:\Users\aladin\AndroidStudioProjects\ADWatchFaceAnalog\Wearable\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\21.0.0\classes.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="efeda77c808750cb670ee9c48d8a1835d89dbcb2">
-        <dex dex="C:\Users\aladin\AndroidStudioProjects\ADWatchFaceAnalog\Wearable\build\intermediates\pre-dexed\debug\classes-3dab9d302d3904871b5b731f79f4ed9006a12b0f.jar" />
     </item>
 
 </items>

@@ -7,10 +7,13 @@
     android:layout_width="match_parent"
     android:padding="0dp">
 
+    <!-- old from FrameLayout app:layout_box="all"
+     This goes wrong!
+    -->
+
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_box="all">
+        android:layout_height="match_parent" >
 
         <TextView
             android:layout_width="wrap_content"
